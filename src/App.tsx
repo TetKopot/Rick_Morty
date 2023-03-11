@@ -3,6 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Character } from './types/Character';
 import { api } from './api/characters';
 import { Header } from './components/Header/Header';
+import { Search } from './components/Form/Search';
 
 export const App: React.FC = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -20,14 +21,8 @@ export const App: React.FC = () => {
 
   return (
     <>
-     <Header />
-     {/* <div> */}
-      {/* {characters.map((char: Character) => (
-        <div key ={char.id}>
-          {char.name} ({char.id})
-        </div>
-      ))}
-     </div> */}
+      <Header />
+      <Search />
     </>
   );
 }
