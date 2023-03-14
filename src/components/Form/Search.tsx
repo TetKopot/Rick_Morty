@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 import { Character } from '../../types/Character';
-// import getCharacters from '../../api/characters';
 import './Search.scss';
+import { Result } from '../Result/Result';
 
 export const Search: React.FC = () => {
   const [value, setValue] = useState('');
+
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    const newValue = event.target.value;
+    setValue(newValue);
   };
 
-
-
   return (
+    <>
     <div className="search">
       <input 
         type="text" 
@@ -23,5 +24,8 @@ export const Search: React.FC = () => {
       />
       <div className="search__icon"></div>
     </div>
+
+    <Result value={value}/>
+    </>
   );
 };
