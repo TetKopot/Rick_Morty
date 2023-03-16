@@ -3,7 +3,6 @@ import { Card } from '../Card/Card';
 import './Result.scss';
 import { ApiResponse, Character, FullCharacter } from '../../types/Character';
 import { api } from '../../api/characters';
-// import { Search } from '../Form/Search'; 
 
 type Props = {
   value: string;

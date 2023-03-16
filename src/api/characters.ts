@@ -5,6 +5,10 @@ const getCharacters = () => {
   return client.get<Character[]>('/character');
 }
 
+const getCharacter = (characterId: string | undefined) => {
+  return client.get<FullCharacter>(`/character/${characterId}`);
+}
+
 const getFullCharacters = () => {
   return client.get<FullCharacter[]>('/character');
 }
@@ -12,4 +16,5 @@ const getFullCharacters = () => {
 export const api = {
   getCharacters,
   getFullCharacters,
+  getCharacter,
 }

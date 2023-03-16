@@ -4,7 +4,7 @@ type RequestMethod = 'GET';
 
 function request<T>(
   url: string,
-  method: 'GET',
+  method: 'GET' | 'POST',
   data: any = null,
 ): Promise<T> {
   const options: RequestInit = { method };
@@ -28,4 +28,5 @@ function request<T>(
 
 export const client = {
   get: <T>(url: string) => request<T>(url, 'GET'),
+  post: <T>(url: string, data: any) => request<T>(url, 'POST', data),
 }

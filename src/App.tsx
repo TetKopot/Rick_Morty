@@ -1,21 +1,16 @@
-import React, { useState, useEffect, useMemo } from 'react';
-// import { ReactDOM } from 'react';
-import { ApiResponse, Character } from './types/Character';
+import React, { useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Search } from './components/Form/Search';
-import { Result } from './components/Result/Result';
+import { Home } from './components/Home/Home';
+import { CharacterDetail } from './components/CharacterDetail/CharacterDetail'; 
 
 export const App: React.FC = () => {
-  // api.getCharacters()
-  //   .then(setCharacters);
-  //   console.log(api)
-
-
 
   return (
-    <>
-      <Header />
-      <Search />
-    </>
+    <Routes>
+      <Route path='/' element={<Home />} /> 
+      <Route path='/character/:characterId' element={<CharacterDetail />} />
+    </Routes>
   );
 }
