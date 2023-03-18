@@ -5,7 +5,6 @@ import './Search.scss';
 import { Result } from '../Result/Result';
 
 export const Search: React.FC = () => {
-  // const [value, setValue] = useState('');
   const [value, setValue] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     const query = params.get("query") || "";
@@ -13,10 +12,6 @@ export const Search: React.FC = () => {
     return query;
   });
 
-  // const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const newValue = event.target.value;
-  //   setValue(newValue);
-  // };
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.trim().toLocaleLowerCase();
 
